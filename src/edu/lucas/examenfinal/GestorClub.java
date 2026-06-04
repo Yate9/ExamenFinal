@@ -40,23 +40,24 @@ public class GestorClub {
         for (Profesional profesional : profesionales) {
             if (profesional.getNombre().equalsIgnoreCase(nombreProfesional)) {
                 profesionales.remove(profesional);
-            } else {
-                throw new ProfesionalNoEncontradoException("Profesional no encontrado");
+                return;
             }
         }
+        throw new ProfesionalNoEncontradoException("Profesional no encontrado");
     }
 
-    public static void mostrarNominas() {
+    public static double mostrarNominas() {
+        double salarioTotal =0;
         for (Profesional profesional : profesionales) {
-            double salarioTotal =0;
             if (profesional instanceof Jugador) {
-                System.out.println("Jugador: " + profesional.getNombre() + " con la posicion " + ((Jugador) profesional).getPosicion() + " y un salario de " + profesional.getSalarioBase() + profesional.getPlusSalarial());
+                System.out.println("Jugador: " + profesional.getNombre() + " con la posicion " + ((Jugador) profesional).getPosicion() + " y un salario de " + profesional.getSalarioBase() + profesional.getPlusSalarial()+"€");
                 salarioTotal += (profesional.getSalarioBase()+(profesional.getPlusSalarial()));
             } else {
-                System.out.println("Tecnico: " + profesional.getNombre() + " con el puesto " + ((Tecnico) profesional).getPuesto() + " y un salario de " + profesional.getSalarioBase() + profesional.getPlusSalarial());
+                System.out.println("Tecnico: " + profesional.getNombre() + " con el puesto " + ((Tecnico) profesional).getPuesto() + " y un salario de " + profesional.getSalarioBase() + profesional.getPlusSalarial()+"€");
                 salarioTotal += (profesional.getSalarioBase()+(profesional.getPlusSalarial()));
             }
         }
+        return salarioTotal;
     }
     public static void mostrarProfesionales(){
         for(Profesional profesional:profesionales){

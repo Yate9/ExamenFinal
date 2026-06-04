@@ -64,7 +64,7 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Viendo nominas totales");
-
+                    System.out.println("Este mes el club esta gastando en total: "+GestorClub.mostrarNominas());
                     break;
                 case 5:
                     System.out.println("Programa finalizado");
