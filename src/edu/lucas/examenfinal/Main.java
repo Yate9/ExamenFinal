@@ -16,7 +16,6 @@ public class Main {
             System.out.println("3. Despedir profesional");
             System.out.println("4. Ver nominas totales");
             System.out.println("5. Salir");
-            System.out.println("6. Ver profesionales");
             int opcion=sc.nextInt();
             switch(opcion){
                 case 1:
@@ -70,8 +69,6 @@ public class Main {
                     System.out.println("Programa finalizado");
                     bandera=false;
                     break;
-                case 6:
-                    GestorClub.mostrarProfesionales();
             }
         }
     }

@@ -59,9 +59,4 @@ public class GestorClub {
         }
         return salarioTotal;
     }
-    public static void mostrarProfesionales(){
-        for(Profesional profesional:profesionales){
-            System.out.println(profesional.getNombre());
-        }
-    }
 }
